@@ -19,7 +19,7 @@ export async function getOrder(id){
     return data;
 }
 
-export async function CreateOrder(newOrder){
+export async function createOrder(newOrder){
     try{
     const res=await fetch(`${BASE_URL}/order`,{
         method:'POST',
@@ -29,9 +29,9 @@ export async function CreateOrder(newOrder){
         }
   })
 
-if(!res.ok) throw Error('Something wrong')
+  if(!res.ok) throw Error('Something wrong')
 
-    const data=await res.json()
+    const {data}=await res.json()
     return data;
  } catch(err){
    throw Error('failed to Create Order')

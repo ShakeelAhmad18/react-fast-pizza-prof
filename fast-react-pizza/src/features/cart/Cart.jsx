@@ -1,4 +1,6 @@
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
+import Button from '../../ui/Button'
+import LinkButton from '../../ui/LinkButton'
 
 /*const fakeCart = [
     {
@@ -25,15 +27,13 @@ import {Link} from 'react-router-dom'
   ];*/
 
 function Cart() {
-    //const cart=fakeCart;
     return (
-
         <div>
-            <Link to='/menu'>&larr; back to menu</Link>
+             <LinkButton to='/menu'>&larr; back to menu</LinkButton>
             <h2>Your Cart %Name%</h2>
             <div>
-                <Link to='/order/new'>order Pizzas</Link>
-                <button>Clear Cart</button>
+                <Button to='/order/new'>order Pizzas</Button>
+                <Button>Clear Cart</Button>
             </div>
         </div>
     )
