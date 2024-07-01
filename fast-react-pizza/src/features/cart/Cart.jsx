@@ -1,8 +1,9 @@
 //import {Link} from 'react-router-dom'
 import Button from '../../ui/Button'
 import LinkButton from '../../ui/LinkButton'
+import CartItem from './CartItem';
 
-/*const fakeCart = [
+ const  fakeCart = [
     {
       pizzaId: 12,
       name: 'Mediterranean',
@@ -24,16 +25,23 @@ import LinkButton from '../../ui/LinkButton'
       unitPrice: 15,
       totalPrice: 15,
     },
-  ];*/
+  ];
 
 function Cart() {
+  const cart = fakeCart;
+
     return (
         <div>
              <LinkButton to='/menu'>&larr; back to menu</LinkButton>
-            <h2>Your Cart %Name%</h2>
-            <div>
-                <Button to='/order/new'>order Pizzas</Button>
-                <Button>Clear Cart</Button>
+            <h2 className='mt-7 text-xl font-semibold'>Your Cart %Name%</h2>
+          
+          <ul className='divide-y divide-stone-300'>
+            {cart.map((item=><CartItem item={item} key={item.id}/>))}
+          </ul>
+
+            <div className='mt-7 space-x-4'>
+                <Button to='/order/new' type='primary'>order Pizzas</Button>
+                <Button type='base'>Clear Cart</Button>
             </div>
         </div>
     )

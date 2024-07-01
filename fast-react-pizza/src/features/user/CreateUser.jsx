@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "../../ui/Button"
+import { Link } from "react-router-dom"
 
 function CreateUser() {
   const [userName,setUserName]=useState('')
@@ -12,7 +13,7 @@ function CreateUser() {
             <p className="text-sm mb-4 text-stone-600 md:text-4xl ">👋 <strong>WelCome!</strong> Please start telling us your name: </p>
             <input type="text" className="input mb-6 w-72" placeholder="Enter full name" value={userName} onChange={(e)=>setUserName(e.target.value)} />
             <div>
-             { userName !== '' && <Button>Starting order</Button> }
+             { userName !== '' && <Link to='/menu'> <Button type='primary'>Starting order</Button> </Link> }
             </div>
         </form>
     )
