@@ -6,7 +6,7 @@ import { formatCurrency } from "../../utils/helpers"
 function CartoverView() {
     const totalQuantity=useSelector(getTotalQuantity)
     const TotalPrice=useSelector(getTotalPrice)
-
+  
    if(!totalQuantity) return null;
 
     return (
